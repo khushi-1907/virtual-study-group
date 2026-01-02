@@ -1,0 +1,16 @@
+{
+    "name": "virtual-study-group-root",
+    "version": "1.0.0",
+    "description": "Virtual Study Group Platform with AI Summarization",
+    "scripts": {
+        "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+        "build": "cd client && npm run build",
+        "start": "cd server && node server.js",
+        "dev": "concurrently \"npm run dev-server\" \"npm run dev-client\"",
+        "dev-server": "cd server && node server.js",
+        "dev-client": "cd client && npm run dev"
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.2"
+    }
+}

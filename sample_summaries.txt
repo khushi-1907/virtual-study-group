@@ -1,0 +1,28 @@
+Sample AI-Generated Summaries for Virtual Study Group Platform
+
+---
+Summary 1: Group Chat (Biology 101)
+Type: Chat History
+Key Takeaways:
+- Discussed the upcoming midterm on cellular respiration.
+- Shared a link to a helpful YouTube playlist on Krebs Cycle.
+- Agreed to meet in the library on Thursday at 2 PM for a group review session.
+- Action Item: Sarah to upload the study guide by Tuesday evening.
+
+---
+Summary 2: Document Analysis (Linear Algebra Notes)
+Type: Text File
+Key Takeaways:
+- Overview of Matrix Multiplication and its properties (non-commutative).
+- Explanation of Determinants and their role in finding inversions.
+- Step-by-step guide on solving systems of linear equations using Gaussian Elimination.
+- Key Formula: det(AB) = det(A)det(B).
+
+---
+Summary 3: Group Chat (Web Development)
+Type: Chat History
+Key Takeaways:
+- Comparison between Tailwind CSS and Bootstrap for the new project.
+- Decision made to use Tailwind CSS for better customization and smaller bundle size.
+- Discussed the integration of Framer Motion for subtle animations.
+- Set a deadline for the initial UI mockup by Friday night.
