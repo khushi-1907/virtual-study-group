@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, Users, BookOpen, Settings, X, LogOut } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
+import { API_BASE_URL } from '../config';
 
 const Sidebar = ({ isOpen, setIsOpen }) => {
     const location = useLocation();
@@ -11,7 +12,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
     useEffect(() => {
         if (token) {
-            axios.get('http://localhost:5000/api/groups')
+            axios.get(`${API_BASE_URL}/groups`)
                 .then(res => setGroups(res.data))
                 .catch(err => console.error(err));
         }
