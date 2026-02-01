@@ -46,6 +46,22 @@ const auth = async (req, res, next) => {
     }
 };
 
+// Health Check Route
+router.get('/', (req, res) => {
+    res.send({ 
+        message: 'Virtual Study Group API is running',
+        timestamp: new Date().toISOString(),
+        routes: [
+            'POST /api/signup',
+            'POST /api/login', 
+            'POST /api/forgot-password',
+            'GET /api/groups',
+            'POST /api/groups',
+            'POST /api/summarize'
+        ]
+    });
+});
+
 // Auth Routes
 router.post('/signup', async (req, res) => {
     try {
@@ -55,7 +71,7 @@ router.post('/signup', async (req, res) => {
         res.status(201).send({ user, token });
     } catch (e) {
         console.error('Signup Error:', e);
-        res.status(400).send(e);
+        res.status(400).send({ error: e.message || 'Signup failed' });
     }
 });
 
