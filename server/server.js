@@ -52,12 +52,10 @@ io.on('connection', (socket) => {
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);
 
-// Production Setup
+// Production Setup - Frontend is served separately on Vercel
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist')));
-    app.get(/.*/, (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../client', 'dist', 'index.html'));
-    });
+    // API-only server - frontend handled by Vercel
+    console.log('API server running in production mode');
 }
 
 const PORT = process.env.PORT || 5000;
