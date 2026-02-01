@@ -71,7 +71,11 @@ router.post('/signup', async (req, res) => {
         res.status(201).send({ user, token });
     } catch (e) {
         console.error('Signup Error:', e);
-        res.status(400).send({ error: e.message || 'Signup failed' });
+        if (e.code === 11000 && e.keyPattern?.email) {
+            res.status(400).send({ error: 'Email already exists' });
+        } else {
+            res.status(400).send({ error: e.message || 'Signup failed' });
+        }
     }
 });
 
