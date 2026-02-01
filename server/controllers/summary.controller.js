@@ -1,7 +1,7 @@
 const Anthropic = require('@anthropic-ai/sdk');
 
 const anthropic = new Anthropic({
-    apiKey: process.env.CLAUDE_API_KEY || 'your-api-key',
+    apiKey: process.env.ANTHROPIC_API_KEY || 'your-api-key',
 });
 
 exports.summarize = async (req, res) => {

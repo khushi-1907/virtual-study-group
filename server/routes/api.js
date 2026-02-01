@@ -18,7 +18,19 @@ const storage = multer.diskStorage({
         cb(null, Date.now() + '-' + file.originalname);
     }
 });
-const upload = multer({ storage });
+const upload = multer({ 
+    storage,
+    fileFilter: (req, file, cb) => {
+        // Reject hidden files and system files
+        if (file.originalname.startsWith('.') || 
+            file.originalname === '.gitignore' ||
+            file.originalname === '.env' ||
+            file.originalname.includes('node_modules')) {
+            return cb(new Error('Invalid file type'), false);
+        }
+        cb(null, true);
+    }
+});
 
 // Middleware to protect routes
 const auth = async (req, res, next) => {
